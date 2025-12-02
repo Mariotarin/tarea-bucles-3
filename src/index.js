@@ -9,6 +9,8 @@ function sumPositive(arr) {
 // Pista: convierte cada elemento a un string y luego obtiene su longitud.
 // Nivel: 🟢 Introductorio
 function mapToLengths(arr) {
+    const lengths = arr.map(el => String(el).length);
+    return lengths
 
 }
 
@@ -37,7 +39,11 @@ function groupByType(arr) {
 // Pista: recorre en orden y para cuando encuentres el primer número < 0.
 // Nivel: 🟢 Introductorio
 function takeUntilNegative(arr) {
-
+    const negativeIndex = arr.findIndex(el => el < 0);
+    if (negativeIndex === -1) {
+        return[...arr];
+    }
+    return arr.slice(0, negativeIndex);
 }
 
 // 7) unique: devuelve elementos únicos (orden original)
@@ -51,13 +57,23 @@ function unique(arr) {
 // Pista: toma `Object.values(obj)` y cuenta los elementos que son truthy.
 // Nivel: 🟢 Introductorio
 function countTruthyValues(obj) {
-
+    
+    const values = Object.values(obj);
+    const valuesTruthy = values.filter(value => !!value);
+    const counter = valuesTruthy.length;
+    return counter
 }
 
 // 9) mapWithIndex: aplica `fn(value, index)` a cada elemento (práctica de map con índice)
 // Pista: pasa el índice al callback y utilízalo si lo necesitas; maneja fn no-función.
 // Nivel: 🟢 Introductorio
 function mapWithIndex(arr, fn) {
+    
+
+const miResultado = arr.map((valor, indice) => {
+  return `${valor}-${indice}`;
+});
+
 
 }
 
