@@ -2,7 +2,13 @@
 // Pista: filtra los números válidos (> 0) y luego suma; recuerda ignorar NaN.
 // Nivel: 🟡 Intermedio
 function sumPositive(arr) {
-
+    let sumPositive = 0
+    arr.forEach(el => {
+        if (el > 0) {
+            sumPositive = sumPositive + el
+        }
+    });
+    return sumPositive
 }
 
 // 2) mapToLengths: devuelve las longitudes de los elementos (strings) en un array
@@ -11,14 +17,21 @@ function sumPositive(arr) {
 function mapToLengths(arr) {
     const lengths = arr.map(el => String(el).length);
     return lengths
-
 }
 
 // 3) filterDigits: devuelve sólo los caracteres numéricos de la cadena
 // Pista: recorre cada carácter y conserva solo los que sean dígitos.
 // Nivel: 🟡 Intermedio
 function filterDigits(str) {
-
+    let myString = str
+    let myArray = myString.split('');
+    let numbers = "";
+    for (let i = 0; i < myArray.length; i++) {
+        if (!isNaN (myArray[i]) && myArray[i] !== "") {
+            numbers += myArray[i];
+        }
+    }
+    return numbers;
 }
 
 // 4) flattenAndFilter: aplana un nivel y elimina elementos falsy
@@ -57,9 +70,8 @@ function unique(arr) {
 // Pista: toma `Object.values(obj)` y cuenta los elementos que son truthy.
 // Nivel: 🟢 Introductorio
 function countTruthyValues(obj) {
-    
     const values = Object.values(obj);
-    const valuesTruthy = values.filter(value => !!value);
+    const valuesTruthy = values.filter(value => value);
     const counter = valuesTruthy.length;
     return counter
 }
@@ -69,12 +81,6 @@ function countTruthyValues(obj) {
 // Nivel: 🟢 Introductorio
 function mapWithIndex(arr, fn) {
     
-
-const miResultado = arr.map((valor, indice) => {
-  return `${valor}-${indice}`;
-});
-
-
 }
 
 // 10) selectEveryN: selecciona cada n-ésimo elemento (n >= 1) 
